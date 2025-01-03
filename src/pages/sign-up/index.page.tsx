@@ -30,7 +30,7 @@ const SignUp: NextPage = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       if (!auth.currentUser) return;
       const uid = auth.currentUser.uid;
-      const response = await axios.post<{ uid: string }>('/api/deleteCustomClaim', {
+      const response = await axios.post<{ uid: string }>('/api/setCustomClaim', {
         uid,
       });
       console.log({ response });

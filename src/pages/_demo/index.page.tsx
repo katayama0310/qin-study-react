@@ -19,13 +19,6 @@ const Home: NextPage = () => {
     console.log(response);
   };
 
-  const handledeleteCustomClaims = async () => {
-    const response = await axios.post<{ uid: string }>('/api/deleteCustomClaim', {
-      uid,
-    });
-    console.log(response);
-  };
-
   const handleVerifyIdToken = async () => {
     console.log(idToken);
     const response = await axios.post<{ uid: string }>('/api/verifyIdToken', {
@@ -108,7 +101,6 @@ const Home: NextPage = () => {
             throw error
           </Button>
           <Button onClick={handleSetCustomClaim}>setCustomClaim</Button>
-          <Button onClick={handledeleteCustomClaims}>deleteCustomClaims</Button>
           <Button onClick={handleVerifyIdToken}>verifyIdToken</Button>
           <Button onClick={handleGetUserId}>getUserId</Button>
           <Button onClick={handleGetUserIdToken}>getUserIdToken</Button>

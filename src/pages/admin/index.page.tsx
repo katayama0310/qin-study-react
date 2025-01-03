@@ -44,15 +44,6 @@ const Admin: NextPage = () => {
     console.log(idTokenResult.claims);
   };
 
-  const handledeleteCustomClaims = async () => {
-    const uid = user?.uid;
-    console.log(uid);
-    const response = await axios.post<{ uid: string }>('/api/deleteCustomClaim', {
-      uid,
-    });
-    console.log(response);
-  };
-
   const handleSetCustomClaim = async () => {
     const uid = user?.uid;
     console.log(uid);
@@ -77,7 +68,6 @@ const Admin: NextPage = () => {
       {isAdmin ? (
         <>
           <h1>admin</h1>
-          <Button onClick={handledeleteCustomClaims}>delete</Button>
         </>
       ) : (
         <>
